@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="theme-toggle">
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Container Authentication -->
+  <div id="authContainer" class="card">
+    <div id="registerForm" class="authForm">
+      <h2>Register</h2>
+      <input type="text" id="registerUsername" placeholder="Username" required>
+      <input type="password" id="registerPassword" placeholder="Password" required>
+      <button onclick="register()">Register</button>
+      <p>Already have an account? <a href="javascript:void(0);" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <div id="loginForm" class="authForm" style="display: none;">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button onclick="login()">Login</button>
+      <p>Don’t have an account? <a href="javascript:void(0);" onclick="showRegister()">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Shopping List Section -->
+  <div class="list card" style="display: none;">
+    <h1 id="myHeading">🛒 Shopping List</h1>
+    <p class="intro">Your <span class="intro__span">personal</span> shopping assistant.</p>
+    
+    <div class="action-buttons">
+      <button id="toggleList" class="togglebutton">Hide list</button>
+      <button class="logoutButton" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="list-items">
+      <p class="description">Type a <span>color</span> to change item text color:</p>
+      <div class="color-control">
+        <input type="text" class="userInput" placeholder="e.g. red / #ff4757">
+        <button class="description">Apply Color</button>
+      </div>
+
+      <ul id="shoppingList"></ul>
+
+      <div class="input-section">
+        <input type="text" class="addItemInput" placeholder="Item, Quantity, Category">
+        <small>
+          Format: <b>Name, Quantity, Category</b>
+        </small>
+      </div>
+
+      <div class="buttons">
+        <button class="addItemButton">➕ Add Item</button>
+        <button class="removeItemButton">➖ Remove Last Item</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
